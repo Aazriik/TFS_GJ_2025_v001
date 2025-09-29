@@ -3,11 +3,6 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Breakable
-  - Ground
-  - Collectible
-  - Solid
   layers:
   - Default
   - TransparentFX
@@ -15,9 +10,6 @@ TagManager:
   - 
   - Water
   - UI
-  - Enemy
-  - SafePlatforms
-  - Player
   - 
   - 
   - 

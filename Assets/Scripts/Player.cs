@@ -1,5 +1,7 @@
+using JetBrains.Annotations;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Player : MonoBehaviour
 {
@@ -21,23 +23,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             Move(Direction.Left);
         }
 
-        else if(Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             Move(Direction.Right);
         }
 
 
-        else if(Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             Move(Direction.Down);
         }
 
-        else if(Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W))
         {
             Move(Direction.Up);
         }

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8110571131886787164}
   - component: {fileID: 1079351994499945247}
   - component: {fileID: 2271718974973086025}
+  - component: {fileID: 735025529086857542}
+  - component: {fileID: 7990982451941187498}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5515471397271395368}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -102,7 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962a20c2491841e4eaef2c45343a56d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
+  rb: {fileID: 735025529086857542}
 --- !u!114 &2271718974973086025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +120,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offTimer: 0.05
   flashlight: {fileID: 2079966409072425807}
-  dimAmount: 0.7
+  dimAmount: 5.5
+--- !u!50 &735025529086857542
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5515471397271395368}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!61 &7990982451941187498
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5515471397271395368}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.8, y: 16}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 8.8, y: 16}
+  m_EdgeRadius: 0
 --- !u!1 &9182567802577482650
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,13 +219,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9182567802577482650}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.043619405, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.27, y: 0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8511302622454465249}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2079966409072425807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,10 +240,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 2
   m_LightType: 3
-  m_BlendStyleIndex: 1
-  m_FalloffIntensity: 0.797
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 2d0abc000000000077a2d8b0
@@ -188,10 +264,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 45.95745
-  m_PointLightOuterAngle: 109.78731
+  m_PointLightInnerAngle: 33.191494
+  m_PointLightOuterAngle: 112.3405
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5.78
+  m_PointLightOuterRadius: 7.75
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1

@@ -429,6 +429,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+JoshsChanges1
     - target: {fileID: 1079351994499945247, guid: 9de259b16c7360443a4c1a08f2dc6917, type: 3}
       propertyPath: rb
       value: 
@@ -437,6 +438,7 @@ PrefabInstance:
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
+main
     - target: {fileID: 2079966409072425807, guid: 9de259b16c7360443a4c1a08f2dc6917, type: 3}
       propertyPath: m_Intensity
       value: 10
@@ -536,6 +538,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
+JoshsChanges1
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5515471397271395368, guid: 9de259b16c7360443a4c1a08f2dc6917, type: 3}
       insertIndex: -1
@@ -543,6 +546,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5515471397271395368, guid: 9de259b16c7360443a4c1a08f2dc6917, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1081694115}
+    m_AddedComponents: []
+main
   m_SourcePrefab: {fileID: 100100000, guid: 9de259b16c7360443a4c1a08f2dc6917, type: 3}
 --- !u!1 &115738122
 GameObject:
@@ -2814,6 +2819,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+JoshsChanges1
 --- !u!1 &1081694109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5515471397271395368, guid: 9de259b16c7360443a4c1a08f2dc6917, type: 3}
@@ -2892,6 +2898,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.8, y: 16}
   m_EdgeRadius: 0
+  main
 --- !u!1 &1084890269
 GameObject:
   m_ObjectHideFlags: 0
@@ -17202,7 +17209,9 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+JoshsChanges1
   m_IsActive: 1
+main
 --- !u!4 &1775613910
 Transform:
   m_ObjectHideFlags: 0

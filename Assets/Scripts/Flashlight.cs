@@ -4,9 +4,7 @@ using UnityEngine.Rendering.Universal;
 
 public class Flashlight : MonoBehaviour
 {
-    public float offTimer = 0.1f;
-
-    float timeBetweenFlicker = 0;
+    public float offTimer;
 
     public Light2D flashlight;
 

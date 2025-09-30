@@ -10,58 +10,34 @@ public class Flashlight : MonoBehaviour
 
     public Light2D flashlight;
 
+    public float dimAmount;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
-        timeBetweenFlicker = Random.Range(30f, 60f);
-
-        InvokeRepeating("ResetTimeBetweenFlickers", 0f, 5f);
-
-        InvokeRepeating("StartFlicker", timeBetweenFlicker, timeBetweenFlicker);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            ToggleFlashlight();
-        }
-    }
-
-    public void ToggleFlashlight()
-    {
-        flashlight.enabled = !flashlight.enabled;
-    }
-
-    public void StartFlicker()
     {
         StartCoroutine(FlashlightFlicker());
     }
 
     public IEnumerator FlashlightFlicker()
     {
-        ToggleFlashlight();
+        yield return new WaitForSeconds(Random.Range(Random.Range(4f, 6f), Random.Range(10f, 14f)));
+
+        flashlight.intensity -= dimAmount;
 
         yield return new WaitForSeconds(offTimer);
 
-        ToggleFlashlight();
-
-        Debug.Log("Flashlight Flickered!");
+        flashlight.intensity += dimAmount;
 
         yield return new WaitForSeconds(offTimer);
 
-        ToggleFlashlight();
+        flashlight.intensity -= dimAmount;
 
         yield return new WaitForSeconds(offTimer);
 
-        ToggleFlashlight();
+        flashlight.intensity += dimAmount;
 
-        Debug.Log("Flashlight Flickered!");
-    }
+        StopCoroutine(FlashlightFlicker());
 
-    public void ResetTimeBetweenFlickers()
-    {
-        timeBetweenFlicker = Random.Range(8f, 14f);
+        StartCoroutine(FlashlightFlicker());
     }
 }

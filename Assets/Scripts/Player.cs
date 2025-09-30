@@ -6,15 +6,18 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float xMov = Input.GetAxisRaw("Horizontal");
 
         float yMov = Input.GetAxisRaw("Vertical");
 
-        Vector3 direction = new Vector3(xMov, yMov, 0);
+        Vector2 direction = new Vector2(xMov, yMov);
 
-        rb.MovePosition(transform.position + direction.normalized * speed * Time.deltaTime);
+        rb.MovePosition(
+            new Vector2(transform.position.x, transform.position.y)
+            + new Vector2(direction.normalized.x, direction.normalized.y)
+            * speed * Time.deltaTime
+        );
     }
 }

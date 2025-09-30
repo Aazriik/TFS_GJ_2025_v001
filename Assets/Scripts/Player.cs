@@ -5,66 +5,58 @@ using UnityEngine.Rendering.Universal;
 
 public class Player : MonoBehaviour
 {
-    public enum Direction
-    {
-        Left,
-        Right,
-        Up,
-        Down
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     public float speed;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+
+        float xMov = Input.GetAxisRaw("Horizontal");
+
+        float yMov = Input.GetAxisRaw("Vertical");
+
+        Vector3 direction = new Vector3(xMov, yMov, 0);
+
+        if(direction.x > 0)
         {
-            Move(Direction.Left);
+            transform.rotation = Quaternion.Euler(Vector3.forward * -90f);
         }
 
-        else if (Input.GetKey(KeyCode.D))
+        else if(direction.x < 0)
         {
-            Move(Direction.Right);
+            transform.rotation = Quaternion.Euler(Vector3.forward * 90f);
         }
 
-
-        else if (Input.GetKey(KeyCode.S))
+        if(direction.y > 0)
         {
-            Move(Direction.Down);
+            transform.rotation = Quaternion.Euler(Vector3.forward * 0f);
         }
 
-        else if (Input.GetKey(KeyCode.W))
+        else if(direction.y < 0)
         {
-            Move(Direction.Up);
-        }
-    }
-
-    private void Move(Direction dir)
-    {
-        if(dir == Direction.Left)
-        {
-            transform.position += Vector3.left * Time.deltaTime * speed;
+            transform.rotation = Quaternion.Euler(Vector3.forward * 180f);
         }
 
-        else if(dir == Direction.Right)
+        if(direction.x > 0 && direction.y > 0)
         {
-            transform.position += Vector3.right * Time.deltaTime * speed;
+            transform.rotation = Quaternion.Euler(Vector3.forward * -45f);
         }
 
-        else if(dir == Direction.Up)
+        if(direction.x > 0 && direction.y < 0)
         {
-            transform.position += Vector3.up * Time.deltaTime * speed;
+            transform.rotation = Quaternion.Euler(Vector3.forward * -135f);
         }
 
-        else if(dir == Direction.Down)
+        if(direction.x < 0 && direction.y < 0)
         {
-            transform.position += Vector3.down * Time.deltaTime * speed;
+            transform.rotation = Quaternion.Euler(Vector3.forward * -225f);
         }
+
+        if(direction.x < 0 && direction.y > 0)
+        {
+            transform.rotation = Quaternion.Euler(Vector3.forward * -315);
+        }
+
+        transform.position += direction.normalized * speed * Time.deltaTime;
     }
 }

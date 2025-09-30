@@ -109,24 +109,54 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Persephone_upscaled_22x40_0
+      name: Persephone_upscaled_22x40
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 880
         height: 1600
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 243, y: -658}
+        - {x: -247, y: -658}
+        - {x: -249, y: -800}
+        - {x: 242, y: -800}
+      tessellationDetail: 0
       bones: []
       spriteID: 40cb781e5c7e6a350800000000000000
       internalID: 6027759988360330244
@@ -138,7 +168,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a28af0accd1626a469a107d55ccc2d86
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +178,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Persephone_upscaled_22x40_0: 6027759988360330244
+      Persephone_upscaled_22x40: 6027759988360330244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

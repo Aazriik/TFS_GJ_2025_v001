@@ -9,12 +9,6 @@ public class GameManager : MonoBehaviour
 
     public List<Camera> cameras;
 
-    public Vector3 bedroomCamPos;
-
-    public Vector3 hallwayCamPos;
-
-    public Vector3 libraryCam;
-
     public string currentRoom;
 
     private void Start()
@@ -44,11 +38,11 @@ public class GameManager : MonoBehaviour
             currentRoom = "Bedroom";
         }
 
-        else if(toRoom == "Library")
+        else if(toRoom == "Livingroom")
         {
             SwitchCamera(activeCamera, cameras[2]);
 
-            currentRoom = "Library";
+            currentRoom = "Livingroom";
         }
     }
 

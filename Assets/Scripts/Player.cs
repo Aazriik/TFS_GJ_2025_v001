@@ -10,7 +10,11 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     private Vector2 lastMoveDirection;
 
-    public Flashlight light;
+    public Flashlight fLight;
+
+    public SpriteRenderer sr;
+
+    public Sprite[] sprites;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +25,7 @@ public class Player : MonoBehaviour
         anim.SetFloat("MoveX", 0);
         anim.SetFloat("MoveY", -1);
 
-        light = GetComponent<Flashlight>();
+        fLight = GetComponent<Flashlight>();
     }
 
     // Update is called once per frame
@@ -32,6 +36,26 @@ public class Player : MonoBehaviour
 
         // Animate
         Animate();
+
+        if (sr.sprite == sprites[0])
+        {
+            fLight.flashlight.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90f);
+        }
+
+        else if (sr.sprite == sprites[1])
+        {
+            fLight.flashlight.gameObject.transform.rotation = Quaternion.Euler(0, 0, -270f);
+        }
+
+        else if (sr.sprite == sprites[2])
+        {
+            fLight.flashlight.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0f);
+        }
+
+        else if (sr.sprite == sprites[3])
+        {
+            fLight.flashlight.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180f);
+        }
     }
 
     // Called once per Physics frame - used for physics (Movement)
@@ -85,26 +109,6 @@ public class Player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize(); // Makes diagonal movement the same speed as other movements
-    
-        if(movement.x > 0)
-        {
-            light.flashlight.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90f);
-        }
-
-        else if(movement.x < 0)
-        {
-            light.flashlight.gameObject.transform.rotation = Quaternion.Euler(0, 0, -270f);
-        }
-
-        else if (movement.y > 0)
-        {
-            light.flashlight.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0f);
-        }
-
-        else if (movement.y < 0)
-        {
-            light.flashlight.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180f);
-        }
     }
 
     void Animate()

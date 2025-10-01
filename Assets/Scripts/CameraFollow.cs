@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Camera Follow Script //
 public class CameraFollow : MonoBehaviour
 {
     public GameManager gm;

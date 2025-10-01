@@ -13,25 +13,42 @@ public class GameManager : MonoBehaviour
 
     public Vector3 hallwayCamPos;
 
+    public Vector3 libraryCam;
+
+    public string currentRoom;
+
     private void Start()
     {
         player = GameObject.Find("Player");
 
         activeCamera = cameras[0];
+
+        currentRoom = "Bedroom";
     }
 
     public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
     {
         player.transform.position = targetPos;
 
-        if(toRoom == "Hallway")
+        if (toRoom == "Hallway")
         {
             SwitchCamera(activeCamera, cameras[1]);
+
+            currentRoom = "Hallway";
         }
 
-        else if(toRoom == "Bedroom")
+        else if (toRoom == "Bedroom")
         {
             SwitchCamera(activeCamera, cameras[0]);
+
+            currentRoom = "Bedroom";
+        }
+
+        else if(toRoom == "Library")
+        {
+            SwitchCamera(activeCamera, cameras[2]);
+
+            currentRoom = "Library";
         }
     }
 

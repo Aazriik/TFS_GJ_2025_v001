@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 3e6ad38f148ad754194124d142388919
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -159024853563543512
+    second: Player_Walking_Tilesheet 3_0
+  - first:
+      213: -9138656764461492655
+    second: Player_Walking_Tilesheet 3_1
+  - first:
+      213: 7358117816163601199
+    second: Player_Walking_Tilesheet 3_2
+  - first:
+      213: 7112915413706702689
+    second: Player_Walking_Tilesheet 3_3
+  - first:
+      213: 8839270466714061796
+    second: Player_Walking_Tilesheet 3_4
+  - first:
+      213: 6989406772424165414
+    second: Player_Walking_Tilesheet 3_5
+  - first:
+      213: 5295892419717382725
+    second: Player_Walking_Tilesheet 3_6
+  - first:
+      213: -8495954548197976902
+    second: Player_Walking_Tilesheet 3_7
+  - first:
+      213: -305929717493571120
+    second: Player_Walking_Tilesheet 3_8
+  - first:
+      213: -340154596715155788
+    second: Player_Walking_Tilesheet 3_9
+  - first:
+      213: -7576675048675827921
+    second: Player_Walking_Tilesheet 3_10
+  - first:
+      213: -2215910645866850510
+    second: Player_Walking_Tilesheet 3_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_0
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 6182
+        width: 812
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820f2ecfcb70bcdf0800000000000000
+      internalID: -159024853563543512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_1
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 6209
+        width: 812
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1565d066718fc2180800000000000000
+      internalID: -9138656764461492655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_2
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 6182
+        width: 812
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b87e73b294d1660800000000000000
+      internalID: 7358117816163601199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_3
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 4157
+        width: 758
+        height: 1541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f736702e626b260800000000000000
+      internalID: 7112915413706702689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_4
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 4157
+        width: 731
+        height: 1541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ebc71238a56baa70800000000000000
+      internalID: 8839270466714061796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_5
+      rect:
+        serializedVersion: 2
+        x: 2861
+        y: 4157
+        width: 785
+        height: 1514
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6284d059d6c5ff060800000000000000
+      internalID: 6989406772424165414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 2105
+        width: 785
+        height: 1541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54240fdc81ace7940800000000000000
+      internalID: 5295892419717382725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_7
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 2105
+        width: 731
+        height: 1541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab49bc61a5e481a80800000000000000
+      internalID: -8495954548197976902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_8
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 2105
+        width: 785
+        height: 1514
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d16f86fa8e11cbf0800000000000000
+      internalID: -305929717493571120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 26
+        width: 785
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bea31e4237874bf0800000000000000
+      internalID: -340154596715155788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_10
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 53
+        width: 785
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f9c19af2e3ad690800000000000000
+      internalID: -7576675048675827921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_Tilesheet 3_11
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 0
+        width: 812
+        height: 1621
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237991b02018f31e0800000000000000
+      internalID: -2215910645866850510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1924e255fda5d214d93e152cc96098a6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Player_Walking_Tilesheet 3_0: -159024853563543512
+      Player_Walking_Tilesheet 3_1: -9138656764461492655
+      Player_Walking_Tilesheet 3_10: -7576675048675827921
+      Player_Walking_Tilesheet 3_11: -2215910645866850510
+      Player_Walking_Tilesheet 3_2: 7358117816163601199
+      Player_Walking_Tilesheet 3_3: 7112915413706702689
+      Player_Walking_Tilesheet 3_4: 8839270466714061796
+      Player_Walking_Tilesheet 3_5: 6989406772424165414
+      Player_Walking_Tilesheet 3_6: 5295892419717382725
+      Player_Walking_Tilesheet 3_7: -8495954548197976902
+      Player_Walking_Tilesheet 3_8: -305929717493571120
+      Player_Walking_Tilesheet 3_9: -340154596715155788
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -50,8 +50,15 @@ public class Interactable : MonoBehaviour
             GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateNoteSystemUISection(stickyNote,
                 stickyNote.parts, stickyNote.expressions,
                 stickyNote.noteImage, stickyNote.texts);
+
+            GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected++;
         }
 
-        GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected++;
+        else if(objectType == "Flashlight")
+        {
+            GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateNoteSystemUISection(stickyNote,
+                stickyNote.parts, stickyNote.expressions,
+                stickyNote.noteImage, stickyNote.texts);
+        }
     }
 }

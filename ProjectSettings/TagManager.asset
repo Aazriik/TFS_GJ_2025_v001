@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - PlayerDet
+  - Audio
   layers:
   - Default
   - TransparentFX

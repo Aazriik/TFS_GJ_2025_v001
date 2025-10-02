@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] noteCategories;
 
+
+
     private void Start()
     {
         player = GameObject.Find("Player");

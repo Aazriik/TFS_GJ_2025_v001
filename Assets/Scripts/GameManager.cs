@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public string currentRoom;
 
+    public int notesCollected;
+
     private void Start()
     {
         player = GameObject.Find("Player");
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
         activeCamera = cameras[0];
 
         currentRoom = "Bedroom";
+
+        notesCollected = 0;
     }
 
     public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)

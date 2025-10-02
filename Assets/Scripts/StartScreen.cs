@@ -35,6 +35,6 @@ public class StartScreen : MonoBehaviour
 
         yield return new WaitForSeconds(3.5f);
 
-        Debug.Log("Sounds playing!");
+        GameObject.Find("SceneChanger").GetComponent<SceneChanger>().ChangeScene("Level_1");
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI noteCounterText;
 
     public GameObject dimmedBackground;
+
+    public Animator dimmedBGAnimator;
 
     public GameObject persephonySketch;
 
@@ -22,11 +25,17 @@ public class UIManager : MonoBehaviour
 
     public Player playerScript;
 
+    public PreGameDialogManager preGameDialogManager;
+
+    public GameObject flashLight;
+
     private void Start()
     {
         notePartCounter = 1;
 
         playerScript = GameObject.Find("Player").GetComponent<Player>();
+
+        StartCoroutine(FadeIn());
     }
 
     public void UpdateNoteSystemUISection(Stickynote note, int noteParts, Sprite[] expression, Sprite noteImage, string[] textToDisplay)
@@ -56,7 +65,7 @@ public class UIManager : MonoBehaviour
 
                 else if (notePartCounter == 2)
                 {
-                    HideUIComponents();
+                    HideUIComponents(note);
 
                     playerScript.enabled = true;
 
@@ -71,7 +80,7 @@ public class UIManager : MonoBehaviour
             {
                 if (notePartCounter == 1)
                 {
-                    HideUIComponents();
+                    HideUIComponents(note);
 
                     playerScript.enabled = true;
 
@@ -79,6 +88,17 @@ public class UIManager : MonoBehaviour
                 }
             });
         }
+    }
+
+    public void UpdateNoteSystemUISection(Sprite expression, Sprite flashlightImage, string textToDisplay)
+    {
+        ShowUIComponents();
+
+        persephonySketch.GetComponent<Image>().sprite = expression;
+
+        noteSprite.GetComponent<Image>().sprite = flashlightImage;
+
+        noteText.GetComponent<TextMeshProUGUI>().text = textToDisplay;
     }
 
     private void ShowUIComponents()
@@ -92,28 +112,55 @@ public class UIManager : MonoBehaviour
         noteText.transform.parent.gameObject.SetActive(true);
     }
 
-    private void HideUIComponents()
+    private void HideUIComponents(Stickynote note)
     {
-        dimmedBackground.SetActive(false);
-
-        persephonySketch.SetActive(false);
-
-        noteSprite.SetActive(false);
-
-        noteText.transform.parent.gameObject.SetActive(false);
-
-        notePartCounter = 1;
-
-        button.onClick.RemoveAllListeners();
-
-        if(GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected == 5)
+        if (note.gameObject.GetComponent<Interactable>().objectType == "Stickynote")
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().ActivateNotes("Creepy");
+            dimmedBackground.SetActive(false);
+
+            persephonySketch.SetActive(false);
+
+            noteSprite.SetActive(false);
+
+            noteText.transform.parent.gameObject.SetActive(false);
+
+            notePartCounter = 1;
+
+            button.onClick.RemoveAllListeners();
+
+            if (GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected == 5)
+            {
+                GameObject.Find("GameManager").GetComponent<GameManager>().ActivateNotes("Creepy");
+            }
+
+            else if (GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected == 10)
+            {
+                GameObject.Find("GameManager").GetComponent<GameManager>().ActivateNotes("Final");
+            }
         }
 
-        else if(GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected == 10)
+        else if(note.gameObject.GetComponent<Interactable>().objectType == "Flashlight")
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().ActivateNotes("Final");
+            dimmedBackground.SetActive(false);
+
+            persephonySketch.SetActive(false);
+
+            noteSprite.SetActive(false);
+
+            noteText.transform.parent.gameObject.SetActive(false);
+
+            button.onClick.RemoveAllListeners();
+
+            flashLight.SetActive(true);
         }
+    }
+
+    public IEnumerator FadeIn()
+    {
+        yield return new WaitForSeconds(2f);
+
+        dimmedBGAnimator.Play("DimmedBGFadeIn");
+
+        preGameDialogManager.ShowPreDialog();
     }
 }

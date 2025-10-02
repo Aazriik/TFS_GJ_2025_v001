@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
         notesCollected = 0;
 
+        player.GetComponent<Player>().enabled = false;
+
         ActivateNotes("Cute");
     }
 

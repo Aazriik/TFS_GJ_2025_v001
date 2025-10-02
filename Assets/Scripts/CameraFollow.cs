@@ -16,8 +16,18 @@ public class CameraFollow : MonoBehaviour
     {
         if(gm.currentRoom == "Hallway")
         {
-            gm.activeCamera.transform.position = new Vector3(gm.activeCamera.transform.position.x,
-                gm.player.transform.position.y, -10f);
+            FollowPlayer();
         }
+
+        else if(gm.currentRoom == "Kitchen")
+        {
+            FollowPlayer();
+        }
+    }
+
+    public void FollowPlayer()
+    {
+        gm.activeCamera.transform.position = new Vector3(gm.activeCamera.transform.position.x,
+                gm.player.transform.position.y, -10f);
     }
 }

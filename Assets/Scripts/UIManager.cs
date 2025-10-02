@@ -20,22 +20,20 @@ public class UIManager : MonoBehaviour
 
     public int notePartCounter;
 
+    public Player playerScript;
+
     private void Start()
     {
         notePartCounter = 1;
+
+        playerScript = GameObject.Find("Player").GetComponent<Player>();
     }
 
-    public void UpdateUI(int noteParts, Sprite[] expression, Sprite noteImage, string[] textToDisplay)
+    public void UpdateNoteSystemUISection(Stickynote note, int noteParts, Sprite[] expression, Sprite noteImage, string[] textToDisplay)
     {
-        GameObject.Find("Player").GetComponent<Player>().enabled = false;
+        playerScript.enabled = false;
 
-        dimmedBackground.SetActive(true);
-
-        persephonySketch.SetActive(true);
-
-        noteSprite.SetActive(true);
-
-        noteText.transform.parent.gameObject.SetActive(true);
+        ShowUIComponents();
 
         persephonySketch.GetComponent<Image>().sprite = expression[0];
 
@@ -43,7 +41,7 @@ public class UIManager : MonoBehaviour
 
         noteText.GetComponent<TextMeshProUGUI>().text = textToDisplay[0];
 
-        if(noteParts > 1)
+        if(noteParts == 2)
         {
             button.onClick.AddListener(() =>
             {
@@ -58,15 +56,11 @@ public class UIManager : MonoBehaviour
 
                 else if (notePartCounter == 2)
                 {
-                    dimmedBackground.SetActive(false);
+                    HideUIComponents();
 
-                    persephonySketch.SetActive(false);
+                    playerScript.enabled = true;
 
-                    noteSprite.SetActive(false);
-
-                    noteText.transform.parent.gameObject.SetActive(false);
-
-                    GameObject.Find("Player").GetComponent<Player>().enabled = true;
+                    note.gameObject.SetActive(false);
                 }
             });
         }
@@ -77,17 +71,49 @@ public class UIManager : MonoBehaviour
             {
                 if (notePartCounter == 1)
                 {
-                    dimmedBackground.SetActive(false);
+                    HideUIComponents();
 
-                    persephonySketch.SetActive(false);
+                    playerScript.enabled = true;
 
-                    noteSprite.SetActive(false);
-
-                    noteText.transform.parent.gameObject.SetActive(false);
-
-                    GameObject.Find("Player").GetComponent<Player>().enabled = true;
+                    note.gameObject.SetActive(false);
                 }
             });
+        }
+    }
+
+    private void ShowUIComponents()
+    {
+        dimmedBackground.SetActive(true);
+
+        persephonySketch.SetActive(true);
+
+        noteSprite.SetActive(true);
+
+        noteText.transform.parent.gameObject.SetActive(true);
+    }
+
+    private void HideUIComponents()
+    {
+        dimmedBackground.SetActive(false);
+
+        persephonySketch.SetActive(false);
+
+        noteSprite.SetActive(false);
+
+        noteText.transform.parent.gameObject.SetActive(false);
+
+        notePartCounter = 1;
+
+        button.onClick.RemoveAllListeners();
+
+        if(GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected == 5)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().ActivateNotes("Creepy");
+        }
+
+        else if(GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected == 10)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().ActivateNotes("Final");
         }
     }
 }

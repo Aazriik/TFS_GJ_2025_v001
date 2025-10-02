@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public int notesCollected;
 
+    public GameObject[] noteCategories;
+
     private void Start()
     {
         player = GameObject.Find("Player");
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
         currentRoom = "Bedroom";
 
         notesCollected = 0;
+
+        ActivateNotes("Cute");
     }
 
     public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
@@ -48,6 +52,22 @@ public class GameManager : MonoBehaviour
 
             currentRoom = "Livingroom";
         }
+
+        else if(toRoom == "Kitchen")
+        {
+            SwitchCamera(activeCamera, cameras[3]);
+
+            currentRoom = "Kitchen";
+        }
+
+        else if (toRoom == "Bathroom")
+        {
+            SwitchCamera(activeCamera, cameras[4]);
+
+            currentRoom = "Bathroom";
+        }
+
+        Debug.Log("Inside " + currentRoom);
     }
 
     public void SwitchCamera(Camera from, Camera to)
@@ -57,5 +77,27 @@ public class GameManager : MonoBehaviour
         to.gameObject.SetActive(true);
 
         activeCamera = to;
+    }
+
+    public void ActivateNotes(string category)
+    {
+        if (category == "Cute")
+        {
+            noteCategories[0].SetActive(true);
+        }
+
+        else if(category == "Creepy")
+        {
+            noteCategories[0].SetActive(false);
+
+            noteCategories[1].SetActive(true);
+        }
+
+        else if(category == "Final")
+        {
+            noteCategories[1].SetActive(false);
+
+            noteCategories[2].SetActive(true);
+        }
     }
 }

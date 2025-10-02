@@ -14,16 +14,21 @@ public class Teleport : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.Find("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "PlayerDet")
         {
-            player.transform.parent.position = new Vector2(portal.transform.position.x, portal.transform.position.y);
+            player.transform.position = new Vector2(portal.transform.position.x, portal.transform.position.y);
             gm.Teleport(new Vector2(portal.transform.position.x, portal.transform.position.y),
                 currentRoom, portal.GetComponent<TeleportAddOn>().currentRoom);
+
+            if (currentRoom == "Kitchen")
+            {
+                Debug.Log("From " + currentRoom + ", To " + portal.GetComponent<TeleportAddOn>().currentRoom);
+            }
         }
     }
 }

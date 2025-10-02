@@ -1,6 +1,3 @@
-using System;
-using System.Reflection;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -8,6 +5,13 @@ public class Interactable : MonoBehaviour
     public string objectType;
 
     public bool collected;
+
+    public Stickynote stickyNote;
+
+    private void Start()
+    {
+        stickyNote = GetComponent<Stickynote>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -43,9 +47,11 @@ public class Interactable : MonoBehaviour
     {
         if (objectType == "Stickynote")
         {
-            GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateUI(GetComponent<Stickynote>().parts,
-             GetComponent<Stickynote>().expressions, GetComponent<Stickynote>().noteImage,
-             GetComponent<Stickynote>().texts);
+            GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateNoteSystemUISection(stickyNote,
+                stickyNote.parts, stickyNote.expressions,
+                stickyNote.noteImage, stickyNote.texts);
         }
+
+        GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected++;
     }
 }

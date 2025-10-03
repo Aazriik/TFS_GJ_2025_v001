@@ -33,11 +33,6 @@ public class Teleport : MonoBehaviour
             player.transform.position = new Vector2(portal.transform.position.x, portal.transform.position.y);
             gm.Teleport(new Vector2(portal.transform.position.x, portal.transform.position.y),
                 currentRoom, portal.GetComponent<TeleportAddOn>().currentRoom);
-
-            if (currentRoom == "Kitchen")
-            {
-                Debug.Log("From " + currentRoom + ", To " + portal.GetComponent<TeleportAddOn>().currentRoom);
-            }
         }
     }
 }

@@ -70,8 +70,6 @@ public class GameManager : MonoBehaviour
 
             currentRoom = "Bathroom";
         }
-
-        Debug.Log("Inside " + currentRoom);
     }
 
     public void SwitchCamera(Camera from, Camera to)

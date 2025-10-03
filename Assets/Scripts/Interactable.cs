@@ -8,8 +8,12 @@ public class Interactable : MonoBehaviour
 
     public Stickynote stickyNote;
 
+    public bool canBePickedUp;
+
     private void Start()
     {
+        canBePickedUp = false;
+
         stickyNote = GetComponent<Stickynote>();
     }
 
@@ -17,9 +21,11 @@ public class Interactable : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            // Show UI pick up instructions //
+
             if (objectType == "Stickynote")
             {
-                Debug.Log("Press F to pick up <b>Sticky Note</b> " + GetComponent<Stickynote>().noteNumber);
+                
             }
         }
     }
@@ -28,16 +34,28 @@ public class Interactable : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            // Trigger item pick up availability code //
+            canBePickedUp = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        canBePickedUp = false;
+    }
+
+    private void Update()
+    {
+        if(canBePickedUp)
+        {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                Debug.Log("<b>Sticky Note</b> picked up!");
-
-                if(!collected)
+                if (!collected)
                 {
                     PickUp();
 
                     collected = true;
+
+                    canBePickedUp = false;
                 }
             }
         }

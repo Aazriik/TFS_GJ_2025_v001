@@ -10,7 +10,11 @@ public class UIManager : MonoBehaviour
 
     public GameObject dimmedBackground;
 
+    public GameObject preGameDimmedBackground;
+
     public Animator dimmedBGAnimator;
+
+    public Animator preGameDimmedBGAnimator;
 
     public GameObject persephonySketch;
 
@@ -24,9 +28,17 @@ public class UIManager : MonoBehaviour
 
     public Player playerScript;
 
+    public Transform start;
+
+    public Sprite startSprite;
+
     public PreGameDialogManager preGameDialogManager;
 
     public GameObject flashLight;
+
+    public Animator persephonySketchPreGameAnimator;
+
+    public Animator preGameTextBoxTextAnimator;
 
     private void Start()
     {
@@ -156,9 +168,29 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator FadeIn()
     {
+        preGameDimmedBackground.SetActive(true);
+
+        preGameDimmedBGAnimator.Play("DimmedBGFadeIn");
+
+        yield return new WaitForSeconds(4f);
+
+        preGameDimmedBGAnimator.Play("DimmedBGFadeOut");
+
+        yield return new WaitForSeconds(2.1f);
+
+        playerScript.gameObject.transform.position = start.position;
+
+        playerScript.gameObject.GetComponent<SpriteRenderer>().sprite = startSprite;
+
+        preGameDimmedBGAnimator.Play("DimmedBGFadeIn");
+
         yield return new WaitForSeconds(2f);
 
-        dimmedBGAnimator.Play("DimmedBGFadeIn");
+        persephonySketchPreGameAnimator.Play("PersephoneSketchFadeIn");
+
+        preGameTextBoxTextAnimator.Play("PregameTextBoxTextFadeIn");
+
+        yield return new WaitForSeconds(2f);
 
         preGameDialogManager.ShowPreDialog();
     }

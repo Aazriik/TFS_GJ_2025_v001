@@ -28,8 +28,6 @@ public class PreGameDialogManager : MonoBehaviour
 
     public void ShowPreDialog()
     {
-        dimmedBackground.SetActive(true);
-
         persephonySketch.SetActive(true);
 
         button.gameObject.SetActive(true);
@@ -47,6 +45,8 @@ public class PreGameDialogManager : MonoBehaviour
         button.gameObject.SetActive(false);
 
         dialogText.SetActive(false);
+
+        playerScript.GetComponent<Animator>().enabled = true;
 
         playerScript.enabled = true;
     }

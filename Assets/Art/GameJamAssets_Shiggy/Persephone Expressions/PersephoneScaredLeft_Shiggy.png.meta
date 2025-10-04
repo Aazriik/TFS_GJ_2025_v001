@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: c35df4a34f8f8c14a902fda90bbf6b00
+guid: ef9b32c2f5f84c946ab50df5389c3532
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1589070919089276495
-    second: PersephoneScared_Shiggy_0
+      213: -161993027939562333
+    second: PersephoneScaredLeft_Shiggy_0
   - first:
-      213: -5139171418226238870
-    second: PersephoneScared_Shiggy_1
+      213: 2692296743664901882
+    second: PersephoneScaredLeft_Shiggy_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,11 +112,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PersephoneScared_Shiggy_0
+      name: PersephoneScaredLeft_Shiggy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f464837e4938d0610800000000000000
-      internalID: 1589070919089276495
+      spriteID: 3ac8299033c70cdf0800000000000000
+      internalID: -161993027939562333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PersephoneScared_Shiggy_1
+      name: PersephoneScaredLeft_Shiggy_1
       rect:
         serializedVersion: 2
         x: 479
@@ -153,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6ad8c8d2defda8b0800000000000000
-      internalID: -5139171418226238870
+      spriteID: afe561cbf95fc5520800000000000000
+      internalID: 2692296743664901882
       vertices: []
       indices: 
       edges: []
@@ -173,8 +199,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PersephoneScared_Shiggy_0: 1589070919089276495
-      PersephoneScared_Shiggy_1: -5139171418226238870
+      PersephoneScaredLeft_Shiggy_0: -161993027939562333
+      PersephoneScaredLeft_Shiggy_1: 2692296743664901882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

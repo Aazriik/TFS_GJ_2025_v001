@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c88f152ce2cb5b34bba8ffbb864c898c
+guid: 96aadfe24a340ad4ca15ab0855ea16de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8759227940079206034
-    second: PersephoneUneasyLeft_Shiggy_0
+      213: -6131250522095632526
+    second: PersephoneSad_Shiggy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,11 +109,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PersephoneUneasyLeft_Shiggy_0
+      name: PersephoneSad_Shiggy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6107ecc898f07680800000000000000
-      internalID: -8759227940079206034
+      spriteID: 27fbf89822c69eaa0800000000000000
+      internalID: -6131250522095632526
       vertices: []
       indices: 
       edges: []
@@ -148,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PersephoneUneasyLeft_Shiggy_0: -8759227940079206034
+      PersephoneSad_Shiggy_0: -6131250522095632526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

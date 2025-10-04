@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 438e70aeaa7ddee47ab75fa86a6b9eb4
+guid: 1573deeb73123c54c8b86cad06ab6691
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7018177117236650135
-    second: LoveYouNote_0
+      213: -1271304542734270011
+    second: PersephoneLovey_Shiggy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoveYouNote_0
+      name: PersephoneLovey_Shiggy_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 88
-        width: 360
-        height: 335
+        x: 0
+        y: 0
+        width: 512
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96f9554881d6a9e90800000000000000
-      internalID: -7018177117236650135
+      spriteID: 5c1cbf8014b6b5ee0800000000000000
+      internalID: -1271304542734270011
       vertices: []
       indices: 
       edges: []
@@ -148,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LoveYouNote_0: -7018177117236650135
+      PersephoneLovey_Shiggy_0: -1271304542734270011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

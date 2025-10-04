@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ae2a38d5c820b974fb3cf45801143f39
+guid: 109309cf93d10b043b8a9e805537db5a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6842416686234319693
-    second: CerberusNote_0
+      213: -7740917826978370424
+    second: PersephoneQuestioning_Shiggy_0
+  - first:
+      213: -2688869202047081592
+    second: PersephoneQuestioning_Shiggy_1
+  - first:
+      213: 2277081455474718558
+    second: PersephoneQuestioning_Shiggy_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,27 +115,97 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CerberusNote_0
+      name: PersephoneQuestioning_Shiggy_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 88
-        width: 360
-        height: 335
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b44ccbc64ada01a0800000000000000
-      internalID: -6842416686234319693
+      spriteID: 88c277fdf3cb29490800000000000000
+      internalID: -7740917826978370424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PersephoneQuestioning_Shiggy_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 444
+        width: 46
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883ee7cf4b73faad0800000000000000
+      internalID: -2688869202047081592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PersephoneQuestioning_Shiggy_2
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 477
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57333ee481d99f10800000000000000
+      internalID: 2277081455474718558
       vertices: []
       indices: 
       edges: []
@@ -138,7 +214,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b272b1a72dd9c8d43bf59810fa2e4ea6
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +224,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CerberusNote_0: -6842416686234319693
+      PersephoneQuestioning_Shiggy_0: -7740917826978370424
+      PersephoneQuestioning_Shiggy_1: -2688869202047081592
+      PersephoneQuestioning_Shiggy_2: 2277081455474718558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

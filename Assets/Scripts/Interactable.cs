@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -8,36 +9,67 @@ public class Interactable : MonoBehaviour
 
     public Stickynote stickyNote;
 
+    public bool canBePickedUp;
+
+    public UIManager uiManager;
+
+    public GameManager gameManager;
+
     private void Start()
     {
+        canBePickedUp = false;
+
         stickyNote = GetComponent<Stickynote>();
+
+        uiManager = GameObject.Find("UserInterface").GetComponent<UIManager>();
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (gameManager && gameManager.realGameStart)
         {
-            if (objectType == "Stickynote")
+            if (collision.tag == "PlayerDet")
             {
-                Debug.Log("Press F to pick up <b>Sticky Note</b> " + GetComponent<Stickynote>().noteNumber);
+                canBePickedUp = true;
+
+                uiManager.pickUpInstructions.GetComponentInChildren<TextMeshProUGUI>().text = GetPickUpInstructions();
+
+                uiManager.TogglePickUpInstructions();
             }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (gameManager && gameManager.realGameStart)
         {
-            // Trigger item pick up availability code //
+            if (collision.tag == "PlayerDet")
+            {
+                if (canBePickedUp)
+                {
+                    canBePickedUp = false;
+
+                    uiManager.TogglePickUpInstructions();
+                }
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if(canBePickedUp)
+        {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                Debug.Log("<b>Sticky Note</b> picked up!");
-
-                if(!collected)
+                if (!collected)
                 {
                     PickUp();
 
                     collected = true;
+
+                    canBePickedUp = false;
                 }
             }
         }
@@ -60,5 +92,10 @@ public class Interactable : MonoBehaviour
                 stickyNote.parts, stickyNote.expressions,
                 stickyNote.noteImage, stickyNote.texts);
         }
+    }
+
+    private string GetPickUpInstructions()
+    {
+        return "Press <b>F</b> to pick up " + objectType;
     }
 }

@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] noteCategories;
 
-
+    public bool realGameStart;
 
     private void Start()
     {
@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player>().enabled = false;
 
         ActivateNotes("Cute");
+
+        realGameStart = false;
     }
 
     public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
@@ -70,8 +72,6 @@ public class GameManager : MonoBehaviour
 
             currentRoom = "Bathroom";
         }
-
-        Debug.Log("Inside " + currentRoom);
     }
 
     public void SwitchCamera(Camera from, Camera to)

@@ -34,16 +34,12 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.clip = finalMusic;
         musicSource.Play();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

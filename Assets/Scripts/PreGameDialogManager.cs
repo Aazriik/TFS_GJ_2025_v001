@@ -15,10 +15,14 @@ public class PreGameDialogManager : MonoBehaviour
 
     public GameObject dialogText;
 
+    public GameManager gameManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerScript = GameObject.Find("Player").GetComponent<Player>();
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         button.onClick.AddListener(() =>
         {
@@ -28,8 +32,6 @@ public class PreGameDialogManager : MonoBehaviour
 
     public void ShowPreDialog()
     {
-        dimmedBackground.SetActive(true);
-
         persephonySketch.SetActive(true);
 
         button.gameObject.SetActive(true);
@@ -48,6 +50,10 @@ public class PreGameDialogManager : MonoBehaviour
 
         dialogText.SetActive(false);
 
+        playerScript.GetComponent<Animator>().enabled = true;
+
         playerScript.enabled = true;
+
+        gameManager.realGameStart = true;
     }
 }

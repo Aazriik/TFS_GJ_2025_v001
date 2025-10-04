@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -10,37 +11,50 @@ public class Interactable : MonoBehaviour
 
     public bool canBePickedUp;
 
+    public UIManager uiManager;
+
+    public GameManager gameManager;
+
     private void Start()
     {
         canBePickedUp = false;
 
         stickyNote = GetComponent<Stickynote>();
+
+        uiManager = GameObject.Find("UserInterface").GetComponent<UIManager>();
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (gameManager && gameManager.realGameStart)
         {
-            // Show UI pick up instructions //
-
-            if (objectType == "Stickynote")
+            if (collision.tag == "PlayerDet")
             {
-                
-            }
-        }
-    }
+                canBePickedUp = true;
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.tag == "Player")
-        {
-            canBePickedUp = true;
+                uiManager.pickUpInstructions.GetComponentInChildren<TextMeshProUGUI>().text = GetPickUpInstructions();
+
+                uiManager.TogglePickUpInstructions();
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        canBePickedUp = false;
+        if (gameManager && gameManager.realGameStart)
+        {
+            if (collision.tag == "PlayerDet")
+            {
+                if (canBePickedUp)
+                {
+                    canBePickedUp = false;
+
+                    uiManager.TogglePickUpInstructions();
+                }
+            }
+        }
     }
 
     private void Update()
@@ -78,5 +92,10 @@ public class Interactable : MonoBehaviour
                 stickyNote.parts, stickyNote.expressions,
                 stickyNote.noteImage, stickyNote.texts);
         }
+    }
+
+    private string GetPickUpInstructions()
+    {
+        return "Press <b>F</b> to pick up " + objectType;
     }
 }

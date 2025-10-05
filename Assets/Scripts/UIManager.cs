@@ -40,6 +40,8 @@ public class UIManager : MonoBehaviour
 
     public Animator preGameTextBoxTextAnimator;
 
+    public GameObject pickUpInstructions;
+
     private void Start()
     {
         notePartCounter = 1;
@@ -47,6 +49,8 @@ public class UIManager : MonoBehaviour
         playerScript = GameObject.Find("Player").GetComponent<Player>();
 
         StartCoroutine(FadeIn());
+
+        TogglePickUpInstructions();
     }
 
     public void UpdateNoteSystemUISection(Stickynote note, int noteParts, Sprite[] expression, Sprite noteImage, string[] textToDisplay)
@@ -193,5 +197,10 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         preGameDialogManager.ShowPreDialog();
+    }
+
+    public void TogglePickUpInstructions()
+    {
+        pickUpInstructions.SetActive(!pickUpInstructions.activeSelf);
     }
 }

@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip doorSlamSFX;
     public AudioClip keyPickupSFX;
     public AudioClip flashlightSFX;
+    public AudioClip potShatterSFX;
 
     [Header("Cute Notes - Audio Clips")]
     public AudioClip cuteMusic;
@@ -33,17 +34,14 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         musicSource.clip = finalMusic;
+        musicSource.loop = true; // Enable looping
         musicSource.Play();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

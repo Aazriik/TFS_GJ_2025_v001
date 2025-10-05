@@ -4,6 +4,8 @@ public class Teleport : MonoBehaviour
 {
     public GameObject portal;
 
+    public bool doorOpenSound;
+
     private GameObject player;
 
     private GameManager gm;
@@ -28,7 +30,10 @@ public class Teleport : MonoBehaviour
     {
         if (collision.tag == "PlayerDet")
         {
-            audioManager.PlaySFX(audioManager.doorOpenSFX);
+            if (doorOpenSound == true)
+            {
+                audioManager.PlaySFX(audioManager.doorOpenSFX);
+            }
 
             player.transform.position = new Vector2(portal.transform.position.x, portal.transform.position.y);
             gm.Teleport(new Vector2(portal.transform.position.x, portal.transform.position.y),

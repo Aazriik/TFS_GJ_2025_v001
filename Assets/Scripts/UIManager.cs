@@ -42,13 +42,17 @@ public class UIManager : MonoBehaviour
 
     public GameObject pickUpInstructions;
 
+    public GameManager gameManager;
+
     private void Start()
     {
         notePartCounter = 1;
 
         playerScript = GameObject.Find("Player").GetComponent<Player>();
 
-        StartCoroutine(FadeIn());
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        StartCoroutine(PreGameCutScene());
 
         TogglePickUpInstructions();
     }
@@ -170,7 +174,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public IEnumerator FadeIn()
+    public IEnumerator PreGameCutScene()
     {
         preGameDimmedBackground.SetActive(true);
 
@@ -187,6 +191,8 @@ public class UIManager : MonoBehaviour
         playerScript.gameObject.GetComponent<SpriteRenderer>().sprite = startSprite;
 
         preGameDimmedBGAnimator.Play("DimmedBGFadeIn");
+
+        gameManager.EnableCerbPlushie();
 
         yield return new WaitForSeconds(2f);
 

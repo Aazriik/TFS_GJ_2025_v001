@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 97f5e8a10bdd2dd4ea7dcda90ccfc938
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5034975646304334265
+    second: Player_Walking_with_Flashlight_Tilesheet_0
+  - first:
+      213: 9131591912367025702
+    second: Player_Walking_with_Flashlight_Tilesheet_1
+  - first:
+      213: 6925932399839398793
+    second: Player_Walking_with_Flashlight_Tilesheet_2
+  - first:
+      213: 5893443401350450717
+    second: Player_Walking_with_Flashlight_Tilesheet_3
+  - first:
+      213: 4417960328449955822
+    second: Player_Walking_with_Flashlight_Tilesheet_4
+  - first:
+      213: 3539438934788212147
+    second: Player_Walking_with_Flashlight_Tilesheet_5
+  - first:
+      213: 1063201634969186677
+    second: Player_Walking_with_Flashlight_Tilesheet_6
+  - first:
+      213: -198330494472849238
+    second: Player_Walking_with_Flashlight_Tilesheet_7
+  - first:
+      213: -8244609702050950271
+    second: Player_Walking_with_Flashlight_Tilesheet_8
+  - first:
+      213: -8595477664735247063
+    second: Player_Walking_with_Flashlight_Tilesheet_9
+  - first:
+      213: -345531597518076783
+    second: Player_Walking_with_Flashlight_Tilesheet_10
+  - first:
+      213: 8882792730972311318
+    second: Player_Walking_with_Flashlight_Tilesheet_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_0
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 6182
+        width: 812
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b176b28ca3dfd540800000000000000
+      internalID: 5034975646304334265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 6209
+        width: 812
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e677a867ee9be70800000000000000
+      internalID: 9131591912367025702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 6182
+        width: 812
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98bcbce82dadd1060800000000000000
+      internalID: 6925932399839398793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_3
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 4157
+        width: 758
+        height: 1541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1e0d597c87b9c150800000000000000
+      internalID: 5893443401350450717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 4157
+        width: 731
+        height: 1541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee71709e28fbf4d30800000000000000
+      internalID: 4417960328449955822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2871
+        y: 4157
+        width: 779
+        height: 1514
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b50d3c55fc9e1130800000000000000
+      internalID: 3539438934788212147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 2105
+        width: 785
+        height: 1541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571f3f0014041ce00800000000000000
+      internalID: 1063201634969186677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 2105
+        width: 731
+        height: 1541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa871d057736f3df0800000000000000
+      internalID: -198330494472849238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_8
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 2105
+        width: 785
+        height: 1514
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18393856823459d80800000000000000
+      internalID: -8244609702050950271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 26
+        width: 785
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925c6aeca9ab6b880800000000000000
+      internalID: -8595477664735247063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 53
+        width: 785
+        height: 1595
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194034fb7dc643bf0800000000000000
+      internalID: -345531597518076783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Walking_with_Flashlight_Tilesheet_11
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 0
+        width: 812
+        height: 1621
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61fc60ffce4064b70800000000000000
+      internalID: 8882792730972311318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9c64256fcc7814c4786bf7bfd4016e34
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Player_Walking_with_Flashlight_Tilesheet_0: 5034975646304334265
+      Player_Walking_with_Flashlight_Tilesheet_1: 9131591912367025702
+      Player_Walking_with_Flashlight_Tilesheet_10: -345531597518076783
+      Player_Walking_with_Flashlight_Tilesheet_11: 8882792730972311318
+      Player_Walking_with_Flashlight_Tilesheet_2: 6925932399839398793
+      Player_Walking_with_Flashlight_Tilesheet_3: 5893443401350450717
+      Player_Walking_with_Flashlight_Tilesheet_4: 4417960328449955822
+      Player_Walking_with_Flashlight_Tilesheet_5: 3539438934788212147
+      Player_Walking_with_Flashlight_Tilesheet_6: 1063201634969186677
+      Player_Walking_with_Flashlight_Tilesheet_7: -198330494472849238
+      Player_Walking_with_Flashlight_Tilesheet_8: -8244609702050950271
+      Player_Walking_with_Flashlight_Tilesheet_9: -8595477664735247063
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -167,6 +167,7 @@ public class UIManager : MonoBehaviour
             button.onClick.RemoveAllListeners();
 
             flashLight.SetActive(true);
+            playerScript.hasFlashlight = true;
         }
     }
 

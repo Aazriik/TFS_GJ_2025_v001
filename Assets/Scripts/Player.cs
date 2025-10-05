@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     private Vector2 lastMoveDirection;
     public bool hasFlashlight;
+    public bool hasKey = false;
 
     public Flashlight fLight;
 

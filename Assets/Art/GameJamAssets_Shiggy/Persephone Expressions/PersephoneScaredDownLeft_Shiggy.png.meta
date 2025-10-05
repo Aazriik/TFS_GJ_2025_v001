@@ -148,9 +148,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 512
-        height: 500
+        height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: PersephoneScaredDownLeft_Shiggy_1
       rect:
         serializedVersion: 2
-        x: 479
-        y: 466
-        width: 27
-        height: 38
+        x: 400
+        y: 408
+        width: 106
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,7 +189,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0c805ae563846fd409ff8d330b4b02a5
     internalID: 0
     vertices: []
     indices: 

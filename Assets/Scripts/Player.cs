@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 lastMoveDirection;
+    public bool hasFlashlight;
 
     public Flashlight fLight;
 
@@ -71,6 +72,12 @@ public class Player : MonoBehaviour
         if (isWalking)
         {
             Vector3 vector3 = Vector3.left * movement.x + Vector3.down * movement.y;
+        }
+
+        // Setting flashlight animation parameter true if player bool is true.
+        if (hasFlashlight)
+        {
+            anim.SetBool("hasFlashlight", true);
         }
     }
 

@@ -16,8 +16,16 @@ public class Interactable : MonoBehaviour
 
     public GameManager gameManager;
 
+    public GameObject player;
+
+    public Player playerScript;
+
     private void Start()
     {
+        player = GameObject.Find("Player");
+
+        playerScript = GameObject.Find("Player").GetComponent<Player>();
+
         canBePickedUp = false;
 
         stickyNote = GetComponent<Stickynote>();
@@ -85,6 +93,9 @@ public class Interactable : MonoBehaviour
                 stickyNote.noteImage, stickyNote.texts);
 
             GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected++;
+
+            // Toggle Pick Up Instructions
+            uiManager.TogglePickUpInstructions();
         }
 
         else if(objectType == "Flashlight")
@@ -92,6 +103,12 @@ public class Interactable : MonoBehaviour
             GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateNoteSystemUISection(stickyNote,
                 stickyNote.parts, stickyNote.expressions,
                 stickyNote.noteImage, stickyNote.texts);
+
+            // Toggle Pick Up Instructions
+            if (uiManager.pickUpInstructions.activeInHierarchy)
+                uiManager.TogglePickUpInstructions();
+
+            player.GetComponent<Player>().hasFlashlight = true;
         }
     }
 

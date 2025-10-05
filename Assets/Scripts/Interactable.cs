@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    //Variables
     public string objectType;
 
     public bool collected;

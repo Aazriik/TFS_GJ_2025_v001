@@ -205,13 +205,14 @@ MonoBehaviour:
   moveSpeed: 2
   anim: {fileID: 6443007587264751228}
   rb: {fileID: 735025529086857542}
+  hasFlashlight: 0
   fLight: {fileID: 2271718974973086025}
   sr: {fileID: 8110571131886787164}
   sprites:
-  - {fileID: -8495954548197976902, guid: 3e6ad38f148ad754194124d142388919, type: 3}
-  - {fileID: 8839270466714061796, guid: 3e6ad38f148ad754194124d142388919, type: 3}
-  - {fileID: -7576675048675827921, guid: 3e6ad38f148ad754194124d142388919, type: 3}
-  - {fileID: -9138656764461492655, guid: 3e6ad38f148ad754194124d142388919, type: 3}
+  - {fileID: -198330494472849238, guid: 97f5e8a10bdd2dd4ea7dcda90ccfc938, type: 3}
+  - {fileID: 4417960328449955822, guid: 97f5e8a10bdd2dd4ea7dcda90ccfc938, type: 3}
+  - {fileID: -345531597518076783, guid: 97f5e8a10bdd2dd4ea7dcda90ccfc938, type: 3}
+  - {fileID: 9131591912367025702, guid: 97f5e8a10bdd2dd4ea7dcda90ccfc938, type: 3}
 --- !u!114 &2271718974973086025
 MonoBehaviour:
   m_ObjectHideFlags: 0

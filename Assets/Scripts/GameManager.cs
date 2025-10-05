@@ -128,6 +128,20 @@ public class GameManager : MonoBehaviour
             noteCategories[1].SetActive(false);
 
             noteCategories[2].SetActive(true);
+        }
+
+        else if(category == "PomBowl")
+        {
+            // Deactivates the final notes and activates the pom bowl note //
+            noteCategories[2].SetActive(false);
+            noteCategories[3].SetActive(true);
+        }
+
+        else if(category == "DoorToHell")
+        {
+            // Deactivates the pom bowl note and activates the doortohell note //
+            noteCategories[3].SetActive(false);
+            noteCategories[4].SetActive(true);
 
             // Allowing the table to be moved with physics //
             physicsTable.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;

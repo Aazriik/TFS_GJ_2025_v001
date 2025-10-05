@@ -110,10 +110,42 @@ public class Interactable : MonoBehaviour
 
             player.GetComponent<Player>().hasFlashlight = true;
         }
+
+        else if(objectType == "PomBowl")
+        {
+            GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateNoteSystemUISection(stickyNote,
+                stickyNote.parts, stickyNote.expressions,
+                stickyNote.noteImage, stickyNote.texts);
+
+            // Toggle Pick Up Instructions
+            if (uiManager.pickUpInstructions.activeInHierarchy)
+                uiManager.TogglePickUpInstructions();
+
+            playerScript.hasKey = true;
+        }
     }
 
     private string GetPickUpInstructions()
     {
-        return "Press <b>F</b> to pick up " + objectType;
+        if(objectType == "Stickynote")
+        {
+            return "Press <b>F</b> to pick up Stickynote";
+        }
+        else if(objectType == "Flashlight")
+        {
+            return "Press <b>F</b> to pick up Flashlight";
+        }
+        else if(objectType == "PomBowl")
+        {
+            return "Press <b>F</b> to pick up Key";
+        }
+        else if(objectType == "DoorToHell")
+        {
+            return "Press <b>F</b> to use Key";
+        }
+        else
+        {
+            return "Press <b>F</b> to pick up " + objectType;
+        }
     }
 }

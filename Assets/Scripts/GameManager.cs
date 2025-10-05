@@ -3,7 +3,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Variables
     public GameObject player;
+
+    public GameObject cerbPlushie;
+
+    public GameObject physicsTable;
+
+    public Player playerScript;
 
     public Camera activeCamera;
 
@@ -21,6 +28,13 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.Find("Player");
 
+        playerScript = GameObject.Find("Player").GetComponent<Player>();
+
+        cerbPlushie = GameObject.Find("CerbPlushie");
+        cerbPlushie.gameObject.SetActive(false);
+        physicsTable = GameObject.Find("PhysicsTable");
+        physicsTable.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
         activeCamera = cameras[0];
 
         currentRoom = "Bedroom";
@@ -33,8 +47,15 @@ public class GameManager : MonoBehaviour
 
         realGameStart = false;
     }
+    private void FixedUpdate()
+    {
+        if (playerScript.GetComponent<Animator>().enabled == true)
+        {
+            cerbPlushie.gameObject.SetActive(true);
+        }
+    }
 
-    public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
+public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
     {
         player.transform.position = targetPos;
 
@@ -102,6 +123,7 @@ public class GameManager : MonoBehaviour
             noteCategories[1].SetActive(false);
 
             noteCategories[2].SetActive(true);
+            physicsTable.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
 }

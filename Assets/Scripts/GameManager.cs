@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Variables
+    // Variables //
     public GameObject player;
 
     public GameObject cerbPlushie;
@@ -24,16 +24,21 @@ public class GameManager : MonoBehaviour
 
     public bool realGameStart;
 
+    // Called on game start //
     private void Start()
     {
+        #region Assigning Game Objects
         player = GameObject.Find("Player");
 
         playerScript = GameObject.Find("Player").GetComponent<Player>();
 
         cerbPlushie = GameObject.Find("CerbPlushie");
-        cerbPlushie.gameObject.SetActive(false);
+
         physicsTable = GameObject.Find("PhysicsTable");
-        physicsTable.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        #endregion
+
+        #region Other Start Stuff
+        DisableCerbPlushie();
 
         activeCamera = cameras[0];
 
@@ -46,16 +51,11 @@ public class GameManager : MonoBehaviour
         ActivateNotes("Cute");
 
         realGameStart = false;
-    }
-    private void FixedUpdate()
-    {
-        if (playerScript.GetComponent<Animator>().enabled == true)
-        {
-            cerbPlushie.gameObject.SetActive(true);
-        }
+        #endregion
     }
 
-public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
+    // Teleports player to (targetPos) based on (toRoom) //
+    public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
     {
         player.transform.position = targetPos;
 
@@ -73,14 +73,14 @@ public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
             currentRoom = "Bedroom";
         }
 
-        else if(toRoom == "Livingroom")
+        else if (toRoom == "Livingroom")
         {
             SwitchCamera(activeCamera, cameras[2]);
 
             currentRoom = "Livingroom";
         }
 
-        else if(toRoom == "Kitchen")
+        else if (toRoom == "Kitchen")
         {
             SwitchCamera(activeCamera, cameras[3]);
 
@@ -95,6 +95,7 @@ public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
         }
     }
 
+    // Switches the active camera from (from) to (to) //
     public void SwitchCamera(Camera from, Camera to)
     {
         from.gameObject.SetActive(false);
@@ -104,15 +105,18 @@ public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
         activeCamera = to;
     }
 
+    // Activate the group of notes (Category) //
     public void ActivateNotes(string category)
     {
         if (category == "Cute")
         {
+            // Activates all the "cute" note //
             noteCategories[0].SetActive(true);
         }
 
         else if(category == "Creepy")
         {
+            // Deactivates the cute notes and activates the creepy notes //
             noteCategories[0].SetActive(false);
 
             noteCategories[1].SetActive(true);
@@ -120,10 +124,25 @@ public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
 
         else if(category == "Final")
         {
+            // Deactivates the creepy notes and activates the final notes //
             noteCategories[1].SetActive(false);
 
             noteCategories[2].SetActive(true);
+
+            // Allowing the table to be moved with physics //
             physicsTable.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
+    }
+
+    // Call this to enable the cerb plushie gameobject //
+    public void EnableCerbPlushie()
+    {
+        cerbPlushie.SetActive(true);
+    }
+
+    // Call this to disable the cerb plushie gameobject //
+    public void DisableCerbPlushie()
+    {
+        cerbPlushie.SetActive(false);
     }
 }

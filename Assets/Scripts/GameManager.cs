@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
 
     public bool realGameStart;
 
+    public GameObject pomBowl;
+
+    public bool canCollectPomBowl;
+
     // Called on game start //
     private void Start()
     {
@@ -52,6 +56,14 @@ public class GameManager : MonoBehaviour
 
         realGameStart = false;
         #endregion
+    }
+
+    private void Update()
+    {
+        if(canCollectPomBowl)
+        {
+            ActivateNotes("PomBowl");
+        }
     }
 
     // Teleports player to (targetPos) based on (toRoom) //
@@ -124,6 +136,8 @@ public class GameManager : MonoBehaviour
 
         else if(category == "Final")
         {
+            noteCategories[0].SetActive(false);
+
             // Deactivates the creepy notes and activates the final notes //
             noteCategories[1].SetActive(false);
 
@@ -132,6 +146,9 @@ public class GameManager : MonoBehaviour
 
         else if(category == "PomBowl")
         {
+            noteCategories[0].SetActive(false);
+            noteCategories[1].SetActive(false);
+
             // Deactivates the final notes and activates the pom bowl note //
             noteCategories[2].SetActive(false);
             noteCategories[3].SetActive(true);
@@ -139,6 +156,10 @@ public class GameManager : MonoBehaviour
 
         else if(category == "DoorToHell")
         {
+            noteCategories[0].SetActive(false);
+            noteCategories[1].SetActive(false);
+            noteCategories[2].SetActive(false);
+
             // Deactivates the pom bowl note and activates the doortohell note //
             noteCategories[3].SetActive(false);
             noteCategories[4].SetActive(true);

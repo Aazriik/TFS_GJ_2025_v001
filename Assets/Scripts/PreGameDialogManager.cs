@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,11 @@ public class PreGameDialogManager : MonoBehaviour
 
     public GameObject dialogText;
 
+    public GameObject textBox;
+
     public GameManager gameManager;
+
+    public UIManager uiManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,9 +29,14 @@ public class PreGameDialogManager : MonoBehaviour
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
+        uiManager = GameObject.Find("UserInterface").GetComponent<UIManager>();
+
         button.onClick.AddListener(() =>
         {
-            Skip();
+            if (gameManager.realGameStart)
+            {
+                StartCoroutine(ProceedIntoGame());
+            }
         });
     }
 
@@ -40,8 +50,12 @@ public class PreGameDialogManager : MonoBehaviour
     }
 
 
-    public void Skip()
+    public IEnumerator ProceedIntoGame()
     {
+        FadeOutPreGameDialog();
+
+        yield return new WaitForSeconds(1f);
+
         dimmedBackground.SetActive(false);
 
         persephonySketch.SetActive(false);
@@ -50,10 +64,19 @@ public class PreGameDialogManager : MonoBehaviour
 
         dialogText.SetActive(false);
 
+        textBox.SetActive(false);
+
         playerScript.GetComponent<Animator>().enabled = true;
 
         playerScript.enabled = true;
+    }
 
-        gameManager.realGameStart = true;
+    private void FadeOutPreGameDialog()
+    {
+        uiManager.persephonySketchPreGameAnimator.Play("PersephoneSketchFadeOut");
+
+        uiManager.preGameTextBoxTextAnimator.Play("PregameTextBoxTextFadeOut");
+
+        uiManager.preGameTextBoxAnimator.Play("PreGameTextBoxFadeOut");
     }
 }

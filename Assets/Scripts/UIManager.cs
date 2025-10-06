@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,14 +41,16 @@ public class UIManager : MonoBehaviour
 
     public Animator preGameTextBoxTextAnimator;
 
+    public Animator preGameTextBoxAnimator;
+
+    public GameObject preGameTextBox;
+
     public GameObject pickUpInstructions;
 
     public GameManager gameManager;
 
     private void Start()
     {
-        notePartCounter = 1;
-
         playerScript = GameObject.Find("Player").GetComponent<Player>();
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -59,6 +62,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdateNoteSystemUISection(Stickynote note, int noteParts, Sprite[] expression, Sprite noteImage, string[] textToDisplay)
     {
+        notePartCounter = 1;
+
         playerScript.enabled = false;
 
         ShowUIComponents();
@@ -68,6 +73,8 @@ public class UIManager : MonoBehaviour
         noteSprite.GetComponent<Image>().sprite = noteImage;
 
         noteText.GetComponent<TextMeshProUGUI>().text = textToDisplay[0];
+
+        notePartCounter++;
 
         if(noteParts == 2)
         {
@@ -106,6 +113,69 @@ public class UIManager : MonoBehaviour
                     note.gameObject.SetActive(false);
                 }
             });
+        }
+
+        else if(noteParts > 2)
+        {
+            Debug.Log("More than 1 note part");
+            if (note.GetComponent<Interactable>().objectType == "PomBowl")
+            {
+                button.onClick.AddListener(() =>
+                {
+                    if(notePartCounter == 2)
+                    {
+                        persephonySketch.GetComponent<Image>().sprite = expression[1];
+
+                        noteText.GetComponent<TextMeshProUGUI>().text = textToDisplay[1];
+
+                        notePartCounter++;
+                    }
+
+                    else if(notePartCounter == 3)
+                    {
+                        persephonySketch.GetComponent<Image>().sprite = expression[2];
+
+                        noteText.GetComponent<TextMeshProUGUI>().text = textToDisplay[2];
+
+                        notePartCounter++;
+                    }
+
+                    else if (notePartCounter == noteParts + 1)
+                    {
+                        HideUIComponents(note);
+
+                        playerScript.enabled = true;
+
+                        note.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+                        gameManager.ActivateNotes("DoorToHell");
+                    }
+                });
+            }
+
+            else if(note.GetComponent<Interactable>().objectType == "DoorToHell")
+            {
+                button.onClick.AddListener(() =>
+                {
+                    if (notePartCounter == noteParts + 1)
+                    {
+                        HideUIComponents(note);
+
+                        playerScript.enabled = true;
+
+                        note.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    }
+
+                    else
+                    {
+                        persephonySketch.GetComponent<Image>().sprite = expression[notePartCounter - 1];
+
+                        noteText.GetComponent<TextMeshProUGUI>().text = textToDisplay[notePartCounter - 1];
+
+                        notePartCounter++;
+                    }
+                });
+            }
         }
     }
 
@@ -147,14 +217,19 @@ public class UIManager : MonoBehaviour
 
             button.onClick.RemoveAllListeners();
 
-            if (GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected == 5)
+            if (gameManager.notesCollected == 5)
             {
-                GameObject.Find("GameManager").GetComponent<GameManager>().ActivateNotes("Creepy");
+                gameManager.ActivateNotes("Creepy");
             }
 
-            else if (GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected == 10)
+            else if (gameManager.notesCollected == 10)
             {
-                GameObject.Find("GameManager").GetComponent<GameManager>().ActivateNotes("Final");
+                gameManager.ActivateNotes("Final");
+            }
+
+            else if(gameManager.notesCollected == 13)
+            {
+                gameManager.ActivateNotes("PomBowl");
             }
         }
 
@@ -171,7 +246,23 @@ public class UIManager : MonoBehaviour
             button.onClick.RemoveAllListeners();
 
             flashLight.SetActive(true);
+
             playerScript.hasFlashlight = true;
+        }
+
+        else if(note.gameObject.GetComponent<Interactable>().objectType == "PomBowl")
+        {
+            dimmedBackground.SetActive(false);
+
+            persephonySketch.SetActive(false);
+
+            noteSprite.SetActive(false);
+
+            noteText.transform.parent.gameObject.SetActive(false);
+
+            notePartCounter = 1;
+
+            button.onClick.RemoveAllListeners();
         }
     }
 
@@ -197,13 +288,15 @@ public class UIManager : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
+        preGameDialogManager.ShowPreDialog();
+
         persephonySketchPreGameAnimator.Play("PersephoneSketchFadeIn");
 
         preGameTextBoxTextAnimator.Play("PregameTextBoxTextFadeIn");
 
         yield return new WaitForSeconds(1f);
 
-        preGameDialogManager.ShowPreDialog();
+        gameManager.realGameStart = true;
     }
 
     public void TogglePickUpInstructions()

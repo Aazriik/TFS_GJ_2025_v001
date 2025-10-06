@@ -88,11 +88,11 @@ public class Interactable : MonoBehaviour
     {
         if (objectType == "Stickynote")
         {
-            GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateNoteSystemUISection(stickyNote,
+            uiManager.UpdateNoteSystemUISection(stickyNote,
                 stickyNote.parts, stickyNote.expressions,
                 stickyNote.noteImage, stickyNote.texts);
 
-            GameObject.Find("GameManager").GetComponent<GameManager>().notesCollected++;
+            gameManager.notesCollected++;
 
             // Toggle Pick Up Instructions
             uiManager.TogglePickUpInstructions();
@@ -100,7 +100,7 @@ public class Interactable : MonoBehaviour
 
         else if(objectType == "Flashlight")
         {
-            GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateNoteSystemUISection(stickyNote,
+            uiManager.UpdateNoteSystemUISection(stickyNote,
                 stickyNote.parts, stickyNote.expressions,
                 stickyNote.noteImage, stickyNote.texts);
 
@@ -113,7 +113,7 @@ public class Interactable : MonoBehaviour
 
         else if(objectType == "PomBowl")
         {
-            GameObject.Find("UserInterface").GetComponent<UIManager>().UpdateNoteSystemUISection(stickyNote,
+            uiManager.UpdateNoteSystemUISection(stickyNote,
                 stickyNote.parts, stickyNote.expressions,
                 stickyNote.noteImage, stickyNote.texts);
 
@@ -122,6 +122,17 @@ public class Interactable : MonoBehaviour
                 uiManager.TogglePickUpInstructions();
 
             playerScript.hasKey = true;
+        }
+
+        else if (objectType == "DoorToHell")
+        {
+            uiManager.UpdateNoteSystemUISection(stickyNote,
+                stickyNote.parts, stickyNote.expressions,
+                stickyNote.noteImage, stickyNote.texts);
+
+            // Toggle Pick Up Instructions
+            if (uiManager.pickUpInstructions.activeInHierarchy)
+                uiManager.TogglePickUpInstructions();
         }
     }
 

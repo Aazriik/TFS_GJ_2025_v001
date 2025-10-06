@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Variables
     // Variables //
     public GameObject player;
 
@@ -28,7 +29,8 @@ public class GameManager : MonoBehaviour
 
     public bool canCollectPomBowl;
 
-    // Called on game start //
+    #endregion
+
     private void Start()
     {
         #region Assigning Game Objects
@@ -58,14 +60,7 @@ public class GameManager : MonoBehaviour
         #endregion
     }
 
-    /*private void Update()
-    {
-        if(canCollectPomBowl)
-        {
-            ActivateNotes("PomBowl");
-        }
-    }*/
-
+    #region Switching Cameras
     // Teleports player to (targetPos) based on (toRoom) //
     public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
     {
@@ -116,7 +111,10 @@ public class GameManager : MonoBehaviour
 
         activeCamera = to;
     }
+    #endregion
 
+
+    #region Activating/Deactivating Notes
     // Activate the group of notes (Category) //
     public void ActivateNotes(string category)
     {
@@ -147,7 +145,7 @@ public class GameManager : MonoBehaviour
             noteCategories[2].SetActive(true);
         }
 
-        else if(category == "Cutscene1")
+        /*else if(category == "Cutscene1")
         {
             // Deactivates the cute notes //
             noteCategories[0].SetActive(false);
@@ -164,7 +162,7 @@ public class GameManager : MonoBehaviour
 
             // Start the cutscene
             //StartCutscene();
-        }
+        }*/
 
         else if(category == "PomBowl")
         {
@@ -178,10 +176,10 @@ public class GameManager : MonoBehaviour
             noteCategories[2].SetActive(false);
 
             // Deactivates the cutscene1 //
-            noteCategories[3].SetActive(false);
+            //noteCategories[3].SetActive(false);
 
             // Activates the pom bowl //
-            noteCategories[4].SetActive(true);
+            noteCategories[3].SetActive(true);
         }
 
         else if(category == "DoorToHell")
@@ -196,19 +194,21 @@ public class GameManager : MonoBehaviour
             noteCategories[2].SetActive(false);
 
             // Deactivates the cutscene1 //
-            noteCategories[3].SetActive(false);
+            //noteCategories[3].SetActive(false);
 
             // Deactivates the pom bowl //
-            noteCategories[4].SetActive(false);
+            noteCategories[3].SetActive(false);
 
             // Activates the door to hell //
-            noteCategories[5].SetActive(true);
+            noteCategories[4].SetActive(true);
 
             // Allowing the table to be moved with physics //
             physicsTable.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
     }
+    #endregion
 
+    #region Cerb Plushie
     // Call this to enable the cerb plushie gameobject //
     public void EnableCerbPlushie()
     {
@@ -220,4 +220,5 @@ public class GameManager : MonoBehaviour
     {
         cerbPlushie.SetActive(false);
     }
+    #endregion
 }

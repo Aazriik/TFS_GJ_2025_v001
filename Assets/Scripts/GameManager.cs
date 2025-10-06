@@ -58,13 +58,13 @@ public class GameManager : MonoBehaviour
         #endregion
     }
 
-    private void Update()
+    /*private void Update()
     {
         if(canCollectPomBowl)
         {
             ActivateNotes("PomBowl");
         }
-    }
+    }*/
 
     // Teleports player to (targetPos) based on (toRoom) //
     public void Teleport(Vector2 targetPos, string previousRoom, string toRoom)
@@ -122,47 +122,87 @@ public class GameManager : MonoBehaviour
     {
         if (category == "Cute")
         {
-            // Activates all the "cute" note //
+            // Activates the cute notes //
             noteCategories[0].SetActive(true);
         }
 
         else if(category == "Creepy")
         {
-            // Deactivates the cute notes and activates the creepy notes //
+            // Deactivates the cute notes //
             noteCategories[0].SetActive(false);
 
+            // Activates the creepy notes //
             noteCategories[1].SetActive(true);
         }
 
         else if(category == "Final")
         {
+            // Deactivates the cute notes //
             noteCategories[0].SetActive(false);
 
-            // Deactivates the creepy notes and activates the final notes //
+            // Deactivates the creepy notes //
             noteCategories[1].SetActive(false);
 
+            // Activates the final notes //
             noteCategories[2].SetActive(true);
+        }
+
+        else if(category == "Cutscene1")
+        {
+            // Deactivates the cute notes //
+            noteCategories[0].SetActive(false);
+
+            // Deactivates the creepy notes //
+            noteCategories[1].SetActive(false);
+
+            // Deactivates the final notes //
+            noteCategories[2].SetActive(false);
+
+
+            // Activates the cutscene1 //
+            noteCategories[3].SetActive(true);
+
+            // Start the cutscene
+            //StartCutscene();
         }
 
         else if(category == "PomBowl")
         {
+            // Deactivates the cute notes //
             noteCategories[0].SetActive(false);
+
+            // Deactivates the creepy notes //
             noteCategories[1].SetActive(false);
 
-            // Deactivates the final notes and activates the pom bowl note //
+            // Deactivates the final notes //
             noteCategories[2].SetActive(false);
-            noteCategories[3].SetActive(true);
+
+            // Deactivates the cutscene1 //
+            noteCategories[3].SetActive(false);
+
+            // Activates the pom bowl //
+            noteCategories[4].SetActive(true);
         }
 
         else if(category == "DoorToHell")
         {
+            // Deactivates the cute notes //
             noteCategories[0].SetActive(false);
+
+            // Deactivates the creepy notes //
             noteCategories[1].SetActive(false);
+
+            // Deactivates the final notes //
             noteCategories[2].SetActive(false);
 
-            // Deactivates the pom bowl note and activates the doortohell note //
+            // Deactivates the cutscene1 //
             noteCategories[3].SetActive(false);
-            noteCategories[4].SetActive(true);
+
+            // Deactivates the pom bowl //
+            noteCategories[4].SetActive(false);
+
+            // Activates the door to hell //
+            noteCategories[5].SetActive(true);
 
             // Allowing the table to be moved with physics //
             physicsTable.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;

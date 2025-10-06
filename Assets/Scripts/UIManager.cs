@@ -160,15 +160,21 @@ public class UIManager : MonoBehaviour
                     if (notePartCounter == noteParts + 1)
                     {
                         HideUIComponents(note);
-
-                        playerScript.enabled = true;
-
-                        note.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                     }
 
                     else
                     {
-                        persephonySketch.GetComponent<Image>().sprite = expression[notePartCounter - 1];
+                        if (expression[notePartCounter - 1] != null)
+                        {
+                            persephonySketch.SetActive(true);
+
+                            persephonySketch.GetComponent<Image>().sprite = expression[notePartCounter - 1];
+                        }
+
+                        else
+                        {
+                            persephonySketch.SetActive(false);
+                        }
 
                         noteText.GetComponent<TextMeshProUGUI>().text = textToDisplay[notePartCounter - 1];
 
@@ -251,6 +257,21 @@ public class UIManager : MonoBehaviour
         }
 
         else if(note.gameObject.GetComponent<Interactable>().objectType == "PomBowl")
+        {
+            dimmedBackground.SetActive(false);
+
+            persephonySketch.SetActive(false);
+
+            noteSprite.SetActive(false);
+
+            noteText.transform.parent.gameObject.SetActive(false);
+
+            notePartCounter = 1;
+
+            button.onClick.RemoveAllListeners();
+        }
+
+        else if (note.gameObject.GetComponent<Interactable>().objectType == "DoorToHell")
         {
             dimmedBackground.SetActive(false);
 

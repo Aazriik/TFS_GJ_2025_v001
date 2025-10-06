@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject pomBowl;
 
-    public bool canCollectPomBowl;
-
     // Called on game start //
     private void Start()
     {
@@ -56,14 +54,6 @@ public class GameManager : MonoBehaviour
 
         realGameStart = false;
         #endregion
-    }
-
-    private void Update()
-    {
-        if(canCollectPomBowl)
-        {
-            ActivateNotes("PomBowl");
-        }
     }
 
     // Teleports player to (targetPos) based on (toRoom) //

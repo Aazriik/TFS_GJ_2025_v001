@@ -1,6 +1,5 @@
 using System.Collections;
 using TMPro;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,6 +47,10 @@ public class UIManager : MonoBehaviour
     public GameObject pickUpInstructions;
 
     public GameManager gameManager;
+
+    public Animator levelScreenFaderAnimator;
+
+    public GameObject levelScreenBG;
 
     private void Start()
     {
@@ -160,6 +163,10 @@ public class UIManager : MonoBehaviour
                     if (notePartCounter == noteParts + 1)
                     {
                         HideUIComponents(note);
+
+                        levelScreenBG.SetActive(true);
+
+                        StartCoroutine(FadeOutLevel());
                     }
 
                     else
@@ -318,10 +325,21 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         gameManager.realGameStart = true;
+
+        Debug.Log("Hello");
     }
 
     public void TogglePickUpInstructions()
     {
         pickUpInstructions.SetActive(!pickUpInstructions.activeSelf);
+    }
+
+    public IEnumerator FadeOutLevel()
+    {
+        levelScreenFaderAnimator.Play("LevelScreenFadeOut");
+
+        yield return new WaitForSeconds(2f);
+
+        gameManager.GetComponent<SceneChanger>().ChangeScene("Credits");
     }
 }

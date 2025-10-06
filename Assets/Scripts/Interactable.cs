@@ -131,8 +131,7 @@ public class Interactable : MonoBehaviour
                 stickyNote.noteImage, stickyNote.texts);
 
             // Toggle Pick Up Instructions
-            if (uiManager.pickUpInstructions.activeInHierarchy)
-                uiManager.TogglePickUpInstructions();
+            uiManager.TogglePickUpInstructions();
         }
     }
 

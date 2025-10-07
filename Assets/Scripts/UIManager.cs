@@ -308,7 +308,7 @@ public class UIManager : MonoBehaviour
         dimmedBGAnimator.Play("DimmedBGFadeOut");
 
         // Wait for fade to complete
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
         // Toggle the pickup instructions box
         TogglePickUpInstructions();

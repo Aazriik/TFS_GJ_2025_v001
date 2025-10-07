@@ -704,11 +704,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: TFSGJ2025v001
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 807c94332956dd01
   metroApplicationDescription: TFS_GJ_2025_v001
   wsaImages: {}
   metroTileShortName: TFS_GJ_2025_v001

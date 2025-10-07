@@ -6,30 +6,20 @@ public class GameManager : MonoBehaviour
     #region Variables
     // Variables //
     public GameObject player;
-
     public GameObject cerbPlushie;
-
     public GameObject physicsTable;
-
     public Player playerScript;
-
     public Camera activeCamera;
-
     public List<Camera> cameras;
-
     public string currentRoom;
-
     public int notesCollected;
-
     public GameObject[] noteCategories;
-
     public bool realGameStart;
-
     public GameObject pomBowl;
-
     public bool canCollectPomBowl;
 
     #endregion
+
 
     private void Start()
     {
@@ -207,6 +197,7 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+
 
     #region Cerb Plushie
     // Call this to enable the cerb plushie gameobject //
